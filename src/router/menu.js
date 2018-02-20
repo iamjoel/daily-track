@@ -12,7 +12,6 @@ var routes = [
   {
     path: '/calendar',
     meta: {
-      title: '分类',
       activeTypeIndex: 1,
     },
     component: resolve => {
@@ -33,11 +32,20 @@ var routes = [
   {
     path: '/member-center',
     meta: {
-      title: '个人中心',
-      activeTypeIndex: 3,
+      activeTypeIndex: 2,
     },
     component: resolve => {
       lazyLoading(resolve, 'member-center')
+    },
+  },
+  {
+    path: '/task',
+    meta: {
+      title: '任务列表',
+      activeTypeIndex: 2,
+    },
+    component: resolve => {
+      lazyLoading(resolve, 'task')
     },
   },
 ]

@@ -15,6 +15,19 @@ const state = {
   },
   isShowFooter: true,
   activeTypeIndex: 0,
+  taskList: [{
+    id: 1,
+    text: '100个高抬腿'
+  },{
+    id: 2,
+    text: '10分钟冥想'
+  },{
+    id: 3,
+    text: '半小时阅读'
+  }],
+  taskFinishStatus: {
+    
+  }
 }
 
 export default new Vuex.Store({
