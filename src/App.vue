@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import * as firebase from 'firebase';
 
 export default {
   name: 'app',
@@ -48,6 +49,24 @@ export default {
   },
   mounted() {
     this.pathChange()
+    var app = firebase.initializeApp({
+      apiKey: "AIzaSyD9WiZ38cICEasD9eaqpi8yIv_QnaD7l7w",
+      authDomain: "daily-track-1e0ed.firebaseapp.com",
+      databaseURL: "https://daily-track-1e0ed.firebaseio.com",
+      projectId: "daily-track-1e0ed",
+      storageBucket: "daily-track-1e0ed.appspot.com",
+      messagingSenderId: "865185976232"
+     })
+    var database = firebase.database()
+    // database.ref('account').push({
+    //   name: 'lily',
+    //   password: '34343'
+    // })
+
+    database.ref('account').once('value').then(function(snapshot) {
+      // debugger
+      console.log(snapshot.val())
+    })
   },
   methods: {
     pathChange() {
@@ -66,6 +85,7 @@ export default {
 };
 </script>
 <style src="@/assets/vendor/reset.css"></style>
+<style src="css-utils-collection"></style>
 <style src="@/assets/vendor/layout-flex.css"></style>
 <style src="@/assets/common.css"></style>
 

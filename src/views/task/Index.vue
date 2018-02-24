@@ -2,10 +2,12 @@
   <div class="main">
     <div v-for="item in taskList" :key="item.id">
       <div class="ly ly--justify">
-        <van-field v-model="item.text" placeholder="请输入用户名" />
-        <van-button type="primary">删除</van-button>
+        <input type="text" v-model="item.text" class="input">
+        <van-button type="danger">删除</van-button>
       </div>
     </div>
+    <van-button type="primary">新增</van-button>
+
 
     <div class="ly ly--center" style="margin-top: 10px;">
       <van-button type="primary" @click="save">保存</van-button>
@@ -29,4 +31,9 @@ export default {
 }
 </script>
 
-<style scoped></style>
+<style scoped>
+  .input {
+    width: 60%;
+    border: 1px solid #ddd;
+  }
+</style>

@@ -10,7 +10,7 @@
         <van-field v-model="value" placeholder="随手记内容" type="textarea" autosize/>
         <div class="ly ly--center" style="margin-top: 10px;">
           <van-button type="primary" @click="copy">复制</van-button>
-          <van-button type="default" @click="clear" style="margin-left: 10px">清空</van-button>
+          <van-button type="default" @click="clear" class="ml-10">清空</van-button>
         </div>
       </van-tab>
     </van-tabs>
