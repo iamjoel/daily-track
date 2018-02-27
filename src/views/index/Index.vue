@@ -1,6 +1,6 @@
 <template>
   <div class="main">
-    <van-tabs :active="active">
+    <!-- <van-tabs :active="active">
       <van-tab title="任务">
         <div v-for="item in $store.state.taskList" :key="item.id" style="margin: 5px 0;">
           <van-checkbox v-model="item.isFinish">{{item.text}}</van-checkbox>
@@ -13,7 +13,7 @@
           <van-button type="default" @click="clear" class="ml-10">清空</van-button>
         </div>
       </van-tab>
-    </van-tabs>
+    </van-tabs> -->
   </div>
 </template>
 

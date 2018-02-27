@@ -6,9 +6,17 @@
         <div style="margin-top: 10px;">已坚持x天</div>
       </div>
     </div>
-    <van-cell-group>
-      <van-cell title="日常任务" is-link @click="$router.push('/task')" />
-    </van-cell-group>
+    <mu-list>
+      <mu-list-item title="日常任务" @click="$router.push('/task')">
+        <mu-icon value="keyboard_arrow_right" slot="right"/>
+      </mu-list-item>
+      <mu-list-item title="统计信息" @click="$router.push('/task')">
+        <mu-icon value="keyboard_arrow_right" slot="right"/>
+      </mu-list-item>
+      <mu-list-item title="关于" @click="$router.push('/task')">
+        <mu-icon value="keyboard_arrow_right" slot="right"/>
+      </mu-list-item>
+    </mu-list>
   </div>
 </template>
 

@@ -3,7 +3,7 @@ var routes = [
   {
     path: '/',
     meta: {
-      activeTypeIndex: 0,
+      tab: 'today',
     },
     component: resolve => {
       lazyLoading(resolve, 'index')
@@ -12,7 +12,7 @@ var routes = [
   {
     path: '/calendar',
     meta: {
-      activeTypeIndex: 1,
+      tab: 'calendar',
     },
     component: resolve => {
       lazyLoading(resolve, 'calendar')
@@ -22,7 +22,6 @@ var routes = [
   //   path: '/calendar/detail/:day',
   //   meta: {
   //     title: '详情',
-  //     activeTypeIndex: 1,
   //     isShowFooter: false
   //   },
   //   component: resolve => {
@@ -32,7 +31,7 @@ var routes = [
   {
     path: '/member-center',
     meta: {
-      activeTypeIndex: 2,
+      tab: 'member-center',
     },
     component: resolve => {
       lazyLoading(resolve, 'member-center')
@@ -42,7 +41,7 @@ var routes = [
     path: '/task',
     meta: {
       title: '任务列表',
-      activeTypeIndex: 2,
+      tab: 'member-center',
     },
     component: resolve => {
       lazyLoading(resolve, 'task')

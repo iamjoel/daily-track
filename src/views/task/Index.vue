@@ -1,17 +1,18 @@
 <template>
   <div class="main">
-    <div v-for="item in taskList" :key="item.id">
+    <div v-for="(item,index) in taskList" :key="item.id">
       <div class="ly ly--justify">
-        <input type="text" v-model="item.text" class="input">
-        <van-button type="danger">删除</van-button>
+        <mu-text-field v-model="item.text" :label="'任务' + (index + 1)" fullWidth/><br/>
+        <!-- <van-button type="danger">删除</van-button> -->
       </div>
     </div>
-    <van-button type="primary">新增</van-button>
+    
+    <mu-float-button icon="add" label="新增" class="mt-10" @click="add" primary />
 
 
-    <div class="ly ly--center" style="margin-top: 10px;">
-      <van-button type="primary" @click="save">保存</van-button>
-      <van-button type="default" @click="$router.go(-1)">返回</van-button>
+    <div class="ly ly-c mt-10">
+      <mu-raised-button label="保存" @click="save" class="mr-10" primary/>
+      <mu-flat-button label="返回" @click="$router.go(-1)"/>
     </div>
   </div>
 </template>
@@ -24,6 +25,9 @@ export default {
     }  
   },
   methods: {
+    add() {
+
+    },
     save() {
 
     }

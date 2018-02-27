@@ -2,24 +2,18 @@ require('@/assets/vendor/rem')
 
 import Vue from 'vue';
 
-// vant ui
-import Vant from 'vant';
-import 'vant/lib/vant-css/index.css';
-Vue.use(Vant)
+// https://github.com/museui/muse-ui
+import MuseUI from 'muse-ui'
+import 'muse-ui/dist/muse-ui.css'
+Vue.use(MuseUI)
 
 Vue.config.productionTip = false
-
-
-require('@/service/interceptor') // axios 拦截器，做通用报错等
 
 require('@/filters')
 
 import store from '@/store'
 
 import router from './router'
-// router.beforeEach((to, from, next) => {
-  
-// })
 
 import App from './App.vue'
 
