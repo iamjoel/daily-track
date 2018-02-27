@@ -1,19 +1,21 @@
 <template>
   <div class="main">
-    <!-- <van-tabs :active="active">
-      <van-tab title="任务">
-        <div v-for="item in $store.state.taskList" :key="item.id" style="margin: 5px 0;">
-          <van-checkbox v-model="item.isFinish">{{item.text}}</van-checkbox>
-        </div>
-      </van-tab>
-      <van-tab title="随手记">
-        <van-field v-model="value" placeholder="随手记内容" type="textarea" autosize/>
-        <div class="ly ly--center" style="margin-top: 10px;">
-          <van-button type="primary" @click="copy">复制</van-button>
-          <van-button type="default" @click="clear" class="ml-10">清空</van-button>
-        </div>
-      </van-tab>
-    </van-tabs> -->
+    <mu-tabs :value="activeTab" @change="changeTab">
+      <mu-tab value="task" title="任务"/>
+      <mu-tab value="mark" title="随手记"/>
+    </mu-tabs>
+    <div v-show="activeTab === 'task'" class="m-10">
+      <div v-for="item in $store.state.taskList" :key="item.id">
+        <mu-checkbox v-model="item.isFinish" :label="item.text" class="demo-checkbox"/>
+      </div>
+    </div>
+    <div v-show="activeTab === 'mark'" class="m-10">
+      <mu-text-field v-model="value" hintText="随手记内容" multiLine :rows="6" fullWidth/>
+      <div class="ly ly-c mt-10">
+        <mu-raised-button label="复制" @click="copy"/>
+        <mu-flat-button label="清空" @click="clear" class="ml-10"/>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -22,7 +24,7 @@ import moment from 'moment'
 export default {
   data() {
     return {
-      active: 0,
+      activeTab: 'task',
       value: '',
       todayTask: this.$store.state.taskFinishStatus[moment().format('YYYY-MM-DD')] || this.$store.state.taskList.map(item => {
         return {
@@ -33,6 +35,9 @@ export default {
     }  
   },
   methods: {
+    changeTab(tab) {
+      this.activeTab = tab
+    },
     copy() {
 
     },
