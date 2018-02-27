@@ -5,6 +5,7 @@ import Vue from 'vue';
 // https://github.com/museui/muse-ui
 import MuseUI from 'muse-ui'
 import 'muse-ui/dist/muse-ui.css'
+import 'muse-ui/dist/theme-teal.css'
 Vue.use(MuseUI)
 
 Vue.config.productionTip = false
